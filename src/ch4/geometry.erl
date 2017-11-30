@@ -10,8 +10,13 @@
 -author("lemonlv").
 
 %% API
--export([area/1]).
+-export([area/1, perimeter/1]).
 
 area({rectangle, Width, Height}) -> Width * Height;
 area({squre, Side}) -> Side * Side;
 area({circle, Radius}) -> Radius * Radius * 3.14.
+
+
+perimeter({rectangle, Width, Height}) -> (Width + Height) * 2;
+perimeter({squre, Side}) -> Side * 4;
+perimeter({circle, Radius}) -> 2 * Radius * 3.14.
