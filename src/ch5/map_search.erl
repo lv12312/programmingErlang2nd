@@ -15,7 +15,7 @@
 map_search_pred(Map, Pred) ->
   Acc = [{Key, Value} || {Key, Value} <- maps:to_list(Map), Pred(Key, Value) =:= true],
   case Acc of
-    [_ | _] -> [{K, V} | _] = Acc,
+    [{K, V} | _] ->
       {K, V};
     [] ->
       {}
